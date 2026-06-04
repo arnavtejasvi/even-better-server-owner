@@ -2,24 +2,25 @@
   "schema_version": 1,
   "quilt_loader": {
     "group": "com.arnav",
-    "id": "chatoptimizer",
+    "id": "serverowner",
     "version": "${version}",
     "metadata": {
-      "name": "Even Better Chat",
-      "description": "Client-side chat quality-of-life improvements: timestamps, duplicate collapse, chat search, filtering, and more.",
+      "name": "Even Better Server Owner",
+      "description": "Server management mod — moderation tools, datapack manager, and Modrinth integration.",
       "contributors": { "arnav": "Owner" },
-      "license": "MIT",
-      "icon": "icon.png"
+      "license": "MIT"
     },
     "intermediate_mappings": "net.fabricmc:intermediary",
     "entrypoints": {
-      "client_init": ["com.arnav.chatoptimizer.ChatOptimizerClient"]
+      "init": ["com.arnav.serverowner.ServerOwnerFabric"]
     },
     "depends": [
       { "id": "quilt_loader", "versions": ">=0.19.0" },
       { "id": "quilted_fabric_api", "versions": "*" },
       { "id": "minecraft", "versions": ">=1.21.1 <1.22" }
+    ],
+    "suggests": [
+      { "id": "serverguard", "versions": "*" }
     ]
-  },
-  "mixin": ["chatoptimizer.client.mixins.json"]
+  }
 }

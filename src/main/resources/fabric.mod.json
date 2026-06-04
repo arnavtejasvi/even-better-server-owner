@@ -1,28 +1,22 @@
 {
   "schemaVersion": 1,
-  "id": "chatoptimizer",
+  "id": "serverowner",
   "version": "${version}",
-  "name": "Chat Optimizer",
-  "description": "Client-side chat performance and quality-of-life improvements.",
-  "authors": [
-    "arnav"
-  ],
-  "environment": "client",
+  "name": "Even Better Server Owner",
+  "description": "Server management mod — moderation tools, datapack manager, and Modrinth integration.",
+  "authors": ["arnav"],
+  "license": "MIT",
+  "environment": "server",
   "entrypoints": {
-    "client": [
-      "com.arnav.chatoptimizer.ChatOptimizerClient"
-    ]
+    "main": ["com.arnav.serverowner.ServerOwnerFabric"]
   },
-  "mixins": [
-    {
-      "config": "chatoptimizer.client.mixins.json",
-      "environment": "client"
-    }
-  ],
   "depends": {
-    "fabricloader": ">=0.18.5",
+    "fabricloader": ">=0.19.2",
+    "fabric-api": "*",
     "minecraft": "~1.21.1",
-    "java": ">=21",
-    "fabric-api": "*"
+    "java": ">=21"
+  },
+  "suggests": {
+    "serverguard": "*"
   }
 }
